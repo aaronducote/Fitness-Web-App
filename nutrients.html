@@ -1,0 +1,92 @@
+<html>
+<head>
+<title>Nutrients</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <h1>Nutrients</h1>
+    <h3>This webpage allows users to insert, delete, and update nutrients for members.</h3>
+    [ <a href="fitness.html">Fitness</a> | <a href="members.html">Members</a> | <a href="nutrients.html">Nutrients</a> | <a href="index.html">Index</a> | <a href="exercise.html">Exercise</a> | <a href="fitnesstoexercise.html">Fitness To Exercise</a> ]
+    <div id="browse" style="display: block">
+        <p><strong>Browse Nutrients</strong></p>
+        <table border="1" cellpadding="5">
+            <tr>
+                <th><a href="#">New</a></th>
+                <th></th>
+                <th>NutrientID</th>
+                <th>Type</th>
+                <th>NutrientCount</th>
+                <th>MemberID</th>
+            </tr>
+            <tr>
+                <td><a href="#">Edit</a></td>
+                <td><a href="#">Delete</a></td>
+                <td align="right">1</td>
+                <td>Carbohydrates</td>
+                <td align="right">480</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td><a href="#">Edit</a></td>
+                <td><a href="#">Delete</a></td>
+                <td align="right">2</td>
+                <td>Protein</td>
+                <td align="right">220</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td><a href="#">Edit</a></td>
+                <td><a href="#">Delete</a></td>
+                <td align="right">3</td>
+                <td>Fats</td>
+                <td align="right">140</td>
+                <td>1</td>
+            </tr>
+        </table>
+        <p>&nbsp;</p>
+    </div> <!-- browse -->
+    <div id="insert" style="display: block">
+        <form id="addNutrient">
+            <legend><strong>Add Nutrient</strong></legend>
+            <fieldset class="fields">
+                <label> NutrientID </label> <input type="text" name="NutrientID">
+                <label> Type </label> <input type="text" name="Type">
+                <label> NutrientCount </label> <input type="text" name="NutrientCount">
+                <label> MemberID </label> <input type="text" name="MemberID">
+            </fieldset>
+            <input class="btn" type="submit" id="addNutrient" value="Add a Nutrient">
+            <input class="btn" type="button" value="cancel">
+        </form> <!--add new planet-->
+    </div><!-- insert -->
+
+    <p>&nbsp;</p>
+    <div id="update" style="display: block">
+        <form id="updateNutrient">
+            <legend><strong>Update Nutrient</strong></legend>
+            <fieldset class="fields">
+                <label>ID:</label> 1
+                <label> Type </label> <input type="text" name="Type" value="Carbohydrates">
+                <label> NutrientCount </label> <input type="text" name="NutrientCount" value="220">
+                <label> MemberID </label> <input type="text" name="MemberID" value="1">
+            </fieldset>
+            <input class="btn" type="submit" id="UpdateSaveNutrient" value="Save Updated Nutrient">
+            <input class="btn" type="button" value="cancel">
+        </form>
+    </div><!-- update -->
+    <p>&nbsp;</p>
+    <div id="delete" style="display: block">
+        <form id="deleteNutrient">
+            <legend><strong>Delete Nutrient</strong></legend>
+            <fieldset class="fields">
+                <p>Are you sure you wish to delete the following nutrient?</p>
+                <label>ID:</label> 1
+                <label> Type </label> Carbohydrates
+
+            </fieldset>
+            <input class="btn" type="submit" id="DeleteNutrient" value="Delete Nutrient">
+            <input class="btn" type="button" value="cancel">
+        </form>
+    </div><!-- delete -->
+</body>
+</html>

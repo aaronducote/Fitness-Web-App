@@ -1,0 +1,92 @@
+<html>
+<head>
+<title>Fitness</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <h1>Fitness</h1>
+    <h3>This webpage allows users to insert, delete, and update workouts for members.</h3>
+    [ <a href="fitness.html">Fitness</a> | <a href="members.html">Members</a> | <a href="nutrients.html">Nutrients</a> | <a href="index.html">Index</a> | <a href="exercise.html">Exercise</a> | <a href="fitnesstoexercise.html">Fitness To Exercise</a> ]
+    <div id="browse" style="display: block">
+        <p><strong>Browse Workouts</strong></p>
+        <table border="1" cellpadding="5">
+            <tr>
+                <th><a href="#">New</a></th>
+                <th></th>
+                <th>WorkoutID</th>
+                <th>Type</th>
+                <th>Time</th>
+                <th>MemberID</th>
+            </tr>
+            <tr>
+                <td><a href="#">Edit</a></td>
+                <td><a href="#">Delete</a></td>
+                <td align="right">1</td>
+                <td>Chest</td>
+                <td align="right">NULL</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td><a href="#">Edit</a></td>
+                <td><a href="#">Delete</a></td>
+                <td align="right">2</td>
+                <td>Back</td>
+                <td align="right">NULL</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td><a href="#">Edit</a></td>
+                <td><a href="#">Delete</a></td>
+                <td align="right">3</td>
+                <td>Legs</td>
+                <td align="right">NULL</td>
+                <td>3</td>
+            </tr>
+        </table>
+        <p>&nbsp;</p>
+    </div> <!-- browse -->
+    <div id="insert" style="display: block">
+        <form id="addWorkout">
+            <legend><strong>Add Workout</strong></legend>
+            <fieldset class="fields">
+                <label> WorkoutID </label> <input type="text" name="WorkoutID">
+                <label> Type </label> <input type="text" name="Type">
+                <label> Time </label> <input type="text" name="Time">
+                <label> MemberID </label> <input type="text" name="MemberID">
+            </fieldset>
+            <input class="btn" type="submit" id="addWorkout" value="Add a Workout">
+            <input class="btn" type="button" value="cancel">
+        </form> <!--add new planet-->
+    </div><!-- insert -->
+
+    <p>&nbsp;</p>
+    <div id="update" style="display: block">
+        <form id="updateWorkout">
+            <legend><strong>Update Workout</strong></legend>
+            <fieldset class="fields">
+                <label>ID:</label> 1
+                <label> Type </label> <input type="text" name="Type" value="Chest">
+                <label> Time </label> <input type="text" name="Time" value="NULL">
+                <label> MemberID </label> <input type="text" name="MemberID" value="1">
+            </fieldset>
+            <input class="btn" type="submit" id="UpdateSaveWorkout" value="Save Updated Workout">
+            <input class="btn" type="button" value="cancel">
+        </form>
+    </div><!-- update -->
+    <p>&nbsp;</p>
+    <div id="delete" style="display: block">
+        <form id="deleteWorkout">
+            <legend><strong>Delete Workout</strong></legend>
+            <fieldset class="fields">
+                <p>Are you sure you wish to delete the following workout?</p>
+                <label>ID:</label> 1
+                <label> Type </label> Chest
+
+            </fieldset>
+            <input class="btn" type="submit" id="DeleteWorkout" value="Delete Workout">
+            <input class="btn" type="button" value="cancel">
+        </form>
+    </div><!-- delete -->
+</body>
+</html>

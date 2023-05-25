@@ -1,0 +1,81 @@
+<html>
+<head>
+<title>Fitness To Exercise</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<h1>Fitness</h1>
+    <h3>This webpage connects the M:N relationship between Fitness and Exercise.</h3>
+[ <a href="fitness.html">Fitness</a> | <a href="members.html">Members</a> | <a href="nutrients.html">Nutrients</a> | <a href="index.html">Index</a> | <a href="exercise.html">Exercise</a> | <a href="fitnesstoexercise.html">Fitness To Exercise</a> ]
+<div id="browse" style="display: block">
+<p><strong>Browse Fitness-To-Exercise</strong></p>
+<table border="1" cellpadding="5">
+  <tr>
+    <th><a href="#">New</a></th>
+    <th></th>
+    <th>WorkoutID</th>
+    <th>ExerciseID</th>
+  </tr>
+  <tr>
+    <td><a href="#">Edit</a></td>
+    <td><a href="#">Delete</a></td>
+    <td align="right" >1</td>
+    <td align="right">1</td>
+  </tr>
+  <tr>
+      <td><a href="#">Edit</a></td>
+      <td><a href="#">Delete</a></td>
+      <td align="right">1</td>
+      <td align="right">2</td>
+  </tr>
+  <tr>
+      <td><a href="#">Edit</a></td>
+      <td><a href="#">Delete</a></td>
+      <td align="right">1</td>
+      <td align="right">3</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</div> <!-- browse -->
+<div id="insert" style="display: block">
+    <form id="addWorkout">
+        <legend><strong>Add FitnessToExercise</strong></legend>
+          <fieldset class="fields">
+            <label> WorkoutID </label> <input type="text" name="WorkoutID">
+            <label> ExerciseID </label> <input type="text" name="ExerciseID">
+          </fieldset>
+          <input class="btn" type="submit" id="addWorkout" value="Add a Fitness To Exercise Relation">
+          <input class="btn" type="button" value="cancel">
+	</form> <!--add new planet-->
+</div><!-- insert -->
+
+<p>&nbsp;</p>
+<div id="update" style="display: block">
+  <form id="updateFitnessToExercise">
+      <legend><strong>Update Fitness To Exercise relation</strong></legend>
+          <fieldset class="fields">
+          <label>ID:</label> 1
+            <label> WorkoutID </label> <input type="text"  name="WorkoutID" value="1">
+            <label> ExerciseID </label> <input type="text" name="ExerciseID" value="1">
+    </fieldset>
+    <input class="btn" type="submit" id="UpdateSaveFitnessToExercise" value="Save Updated Fitness to Exercise Relation">
+          <input class="btn" type="button" value="cancel" >
+  </form> 
+</div><!-- update -->
+<p>&nbsp;</p>
+<div id="delete" style="display: block">
+  <form id="deleteFitnessToExercise">
+      <legend><strong>Delete Fitness to Exercise relation</strong></legend>
+          <fieldset class="fields">
+          <p>Are you sure you wish to delete the following fitness to exercise relation?</p>
+          <label>WorkoutID:</label> 1
+            <label> ExerciseID: </label> 1
+            
+    </fieldset>
+    <input class="btn" type="submit" id="DeleteFitnessToExercise" value="Delete Fitness to Exercise Relation">
+          <input class="btn" type="button" value="cancel" >
+  </form> 
+</div><!-- delete -->
+</body>
+</html>

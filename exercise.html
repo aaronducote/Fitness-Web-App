@@ -1,0 +1,98 @@
+<html>
+<head>
+<title>Exercise</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <h1>Exercise</h1>
+    <h3>This webpage allows users to insert, delete, and update exercises for members' workouts.</h3>
+    [ <a href="fitness.html">Fitness</a> | <a href="members.html">Members</a> | <a href="nutrients.html">Nutrients</a> | <a href="index.html">Index</a> | <a href="exercise.html">Exercise</a> | <a href="fitnesstoexercise.html">Fitness To Exercise</a> ]
+    <div id="browse" style="display: block">
+        <p><strong>Browse Exercises</strong></p>
+        <table border="1" cellpadding="5">
+            <tr>
+                <th><a href="#">New</a></th>
+                <th></th>
+                <th>ExerciseID</th>
+                <th>Name</th>
+                <th>Sets</th>
+                <th>Repititions</th>
+                <th>Weight</th>
+            </tr>
+            <tr>
+                <td><a href="#">Edit</a></td>
+                <td><a href="#">Delete</a></td>
+                <td align="right">1</td>
+                <td>Bench Press</td>
+                <td align="right">3</td>
+                <td>8</td>
+                <td>150</td>
+            </tr>
+            <tr>
+                <td><a href="#">Edit</a></td>
+                <td><a href="#">Delete</a></td>
+                <td align="right">1</td>
+                <td>Incline Press</td>
+                <td align="right">3</td>
+                <td>10</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td><a href="#">Edit</a></td>
+                <td><a href="#">Delete</a></td>
+                <td align="right">1</td>
+                <td>Pec Flys</td>
+                <td align="right">3</td>
+                <td>12</td>
+                <td>85</td>
+            </tr>
+        </table>
+        <p>&nbsp;</p>
+    </div> <!-- browse -->
+    <div id="insert" style="display: block">
+        <form id="addExercise">
+            <legend><strong>Add Exercise</strong></legend>
+            <fieldset class="fields">
+                <label> ExerciseID </label> <input type="text" name="ExerciseID">
+                <label> Name </label> <input type="text" name="Name>
+                <label> Sets </label> <input type="text" name="Sets">
+                <label> Repititions </label> <input type="text" name="Repititions">
+                <label> Weight </label> <input type="text" name="Weight">
+            </fieldset>
+            <input class="btn" type="submit" id="addExercise" value="Add a Exercise">
+            <input class="btn" type="button" value="cancel">
+        </form> <!--add new planet-->
+    </div><!-- insert -->
+
+    <p>&nbsp;</p>
+    <div id="update" style="display: block">
+        <form id="updateExercise">
+            <legend><strong>Update Exercise</strong></legend>
+            <fieldset class="fields">
+                <label>ID:</label> 1
+                <label> Name </label> <input type="text" name="name" value="Bench Press">
+                <label> Sets </label> <input type="text" name="Sets" value="3">
+                <label> Repititions </label> <input type="text" name="Repititions" value="8">
+                <label> Weight </label> <input type="text" name="Weight" value="150">
+            </fieldset>
+            <input class="btn" type="submit" id="UpdateSaveExercise" value="Save Updated Exercise">
+            <input class="btn" type="button" value="cancel">
+        </form>
+    </div><!-- update -->
+    <p>&nbsp;</p>
+    <div id="delete" style="display: block">
+        <form id="deleteExercise">
+            <legend><strong>Delete Exercise</strong></legend>
+            <fieldset class="fields">
+                <p>Are you sure you wish to delete the following exercise?</p>
+                <label>ID:</label> 1
+                <label> Name </label> Bench Press
+
+            </fieldset>
+            <input class="btn" type="submit" id="DeleteExercise" value="Delete Exercise">
+            <input class="btn" type="button" value="cancel">
+        </form>
+    </div><!-- delete -->
+</body>
+</html>
