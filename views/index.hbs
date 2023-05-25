@@ -66,3 +66,40 @@
 
 {{!-- Embed our javascript to handle the DOM manipulation and AJAX request --}}
 <script src="./js/add_member.js"></script>
+
+
+
+<h2>Search Using an HTML Form</h2>
+<p>Search by last name using the field below. Partial last names are OK too!</p>
+<form id="search-member-html" method='GET' action='/'>
+    <label for="input-Name">Search by Name: </label>
+    <input type="text" name="Name" id="input-Name-html-search">
+
+    <input type="submit">
+    <a href='/'><button>Reset</button></a>
+</form>
+
+<h2>Updating A User's Email Form</h2>
+<p>To update a specific user's email select their name from the drop-down menu on the left and their desired email from the drop down menu on the right</p>
+<form id="update-member-form-ajax">
+
+    <label for="input-Name">Name: </label>
+    <select name="input-Name" id="mySelect">
+        <option value="test">Select a Member</option>
+        {{#each data}}
+        <option value="{{this.MemberID}}">{{this.Name}}</option>
+        {{/each}}
+    </select>
+
+    <label for="input-Email">Email: </label>
+    <select name="input-Email" id="input-Email-update">
+        <option>Select an Email</option>
+        {{#each data}}
+        <option value="{{this.MemberID}}">{{this.Name}}</option>
+        {{/each}}
+    </select>
+    <input type="submit">
+
+</form>
+
+<script src="./js/update_member.js"></script>
