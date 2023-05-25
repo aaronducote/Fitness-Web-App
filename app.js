@@ -8,6 +8,7 @@ var express = require('express');
 var app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
+app.use(express.static(__dirname + '/public'));
 
 PORT = 5741;
 
@@ -19,7 +20,6 @@ var exphs = require('express-handlebars');
 app.engine('.hbs', exphbs({extname: ".hbs"}));
 app.set('view engine', '.hbs');
 
-app.use(express.static('public'));
 
 /* 
  * ROUTES
@@ -168,6 +168,72 @@ app.post('/add-person-form', function(req, res){
         }
     })
 })
+
+app.delete('/delete-person-ajax/', function(req,res,next){
+  let data = req.body;
+  let personID = parseInt(data.id);
+  let deleteBsg_Cert_People = `DELETE FROM bsg_cert_people WHERE pid = ?`;
+  let deleteBsg_People= `DELETE FROM bsg_people WHERE id = ?`;
+
+
+        // Run the 1st query
+        db.pool.query(deleteBsg_Cert_People, [personID], function(error, rows, fields){
+            if (error) {
+
+            // Log the error to the terminal so we know what went wrong, and send the visitor an HTTP response 400 indicating it was a bad request.
+            console.log(error);
+            res.sendStatus(400);
+            }
+
+            else
+            {
+                // Run the second query
+                db.pool.query(deleteBsg_People, [personID], function(error, rows, fields) {
+
+                    if (error) {
+                        console.log(error);
+                        res.sendStatus(400);
+                    } else {
+                        res.sendStatus(204);
+                    }
+                })
+            }
+})});
+
+app.put('/put-person-ajax', function(req,res,next){
+  let data = req.body;
+
+  let homeworld = parseInt(data.homeworld);
+  let person = parseInt(data.fullname);
+
+  queryUpdateWorld = `UPDATE bsg_people SET homeworld = ? WHERE bsg_people.id = ?`;
+  selectWorld = `SELECT * FROM bsg_planets WHERE id = ?`
+
+        // Run the 1st query
+        db.pool.query(queryUpdateWorld, [homeworld, person], function(error, rows, fields){
+            if (error) {
+
+            // Log the error to the terminal so we know what went wrong, and send the visitor an HTTP response 400 indicating it was a bad request.
+            console.log(error);
+            res.sendStatus(400);
+            }
+
+            // If there was no error, we run our second query and return that data so we can use it to update the people's
+            // table on the front-end
+            else
+            {
+                // Run the second query
+                db.pool.query(selectWorld, [homeworld], function(error, rows, fields) {
+
+                    if (error) {
+                        console.log(error);
+                        res.sendStatus(400);
+                    } else {
+                        res.send(rows);
+                    }
+                })
+            }
+})});
 
 /*
  * LISTENER
