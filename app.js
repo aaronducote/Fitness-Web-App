@@ -11,9 +11,9 @@ PORT = 5741;
 var db = require('./database/db-connector');
 
 
-const { engine } = require('express-handlebars');
+const { query } = require('express');
 var exphs = require('express-handlebars');
-app.engine('.hbs', engine({extname: ".hbs"}));
+app.engine('.hbs', exphbs({extname: ".hbs"}));
 app.set('view engine', '.hbs');
 
 /* 
@@ -22,7 +22,7 @@ app.set('view engine', '.hbs');
 
 app.get('/', function(req, res)
 	{
-		res.sender('index');
+		res.render('index');
 	});
 
 /*
