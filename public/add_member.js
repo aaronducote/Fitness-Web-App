@@ -1,35 +1,38 @@
 // Get the objects we need to modify
-let addPersonForm = document.getElementById('add-person-form-ajax');
+let addMemberForm = document.getElementById('add-member-form-ajax');
 
 // Modify the objects we need
-addPersonForm.addEventListener("submit", function (e) {
+addMemberForm.addEventListener("submit", function (e) {
     
     // Prevent the form from submitting
     e.preventDefault();
 
     // Get form fields we need to get data from
-    let inputFirstName = document.getElementById("input-fname");
-    let inputLastName = document.getElementById("input-lname");
-    let inputHomeworld = document.getElementById("input-homeworld");
-    let inputAge = document.getElementById("input-age");
+    let inputName = document.getElementById("input-Name");
+    let inputEmail = document.getElementById("input-Email");
+    let inputHeight = document.getElementById("input-Height");
+    let inputWeight = document.getElementById("input-Weight");
+    let inputAge = document.getElementById("input-Age");
 
     // Get the values from the form fields
-    let firstNameValue = inputFirstName.value;
-    let lastNameValue = inputLastName.value;
-    let homeworldValue = inputHomeworld.value;
-    let ageValue = inputAge.value;
+    let NameValue = inputName.value;
+    let EmailValue = inputEmail.value;
+    let HeightValue = inputHeight.value;
+    let WeightValue = inputWeight.value;
+    let AgeValue = inputAge.value;
 
     // Put our data we want to send in a javascript object
     let data = {
-        fname: firstNameValue,
-        lname: lastNameValue,
-        homeworld: homeworldValue,
-        age: ageValue
+        Name: NameValue,
+        Email: EmailValue,
+        Height: HeightValue,
+        Weight: WeightValue,
+        Age: AgeValue
     }
     
     // Setup our AJAX request
     var xhttp = new XMLHttpRequest();
-    xhttp.open("POST", "/add-person-ajax", true);
+    xhttp.open("POST", "/add-member-ajax", true);
     xhttp.setRequestHeader("Content-type", "application/json");
 
     // Tell our AJAX request how to resolve
@@ -40,9 +43,10 @@ addPersonForm.addEventListener("submit", function (e) {
             addRowToTable(xhttp.response);
 
             // Clear the input fields for another transaction
-            inputFirstName.value = '';
-            inputLastName.value = '';
-            inputHomeworld.value = '';
+            inputName.value = '';
+            inputEmail.value = '';
+            inputHeight.value = '';
+            inputWeight.value = '';
             inputAge.value = '';
         }
         else if (xhttp.readyState == 4 && xhttp.status != 200) {
@@ -61,7 +65,7 @@ addPersonForm.addEventListener("submit", function (e) {
 addRowToTable = (data) => {
 
     // Get a reference to the current table on the page and clear it out.
-    let currentTable = document.getElementById("people-table");
+    let currentTable = document.getElementById("member-table");
 
     // Get the location where we should insert the new row (end of table)
     let newRowIndex = currentTable.rows.length;
@@ -80,10 +84,11 @@ addRowToTable = (data) => {
 
     // Fill the cells with correct data
     idCell.innerText = newRow.id;
-    firstNameCell.innerText = newRow.fname;
-    lastNameCell.innerText = newRow.lname;
-    homeworldCell.innerText = newRow.homeworld;
-    ageCell.innerText = newRow.age;
+    NameCell.innerText = newRow.Name;
+    EmailCell.innerText = newRow.Email;
+    HeightCell.innerText = newRow.Height;
+    WeightCell.innerText = newRow.Weight;
+    AgeCell.innerText = newRow.Age;
 
     // Add the cells to the row 
     row.appendChild(idCell);
