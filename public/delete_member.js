@@ -1,12 +1,12 @@
-function deletePerson(personID) {
+function deletePerson(memberID) {
      // Put our data we want to send in a javascript object
      let data = {
-         id: personID
+         id: memberID
      };
     
      // Setup our AJAX request
      var xhttp = new XMLHttpRequest();
-     xhttp.open("DELETE", "/delete-person-ajax", true);
+     xhttp.open("DELETE", "/delete-member-ajax", true);
      xhttp.setRequestHeader("Content-type", "application/json");
 
      // Tell our AJAX request how to resolve
@@ -14,7 +14,7 @@ function deletePerson(personID) {
          if (xhttp.readyState == 4 && xhttp.status == 204) {
 
              // Add the new data to the table
-             deleteRow(personID);
+             deleteRow(memberID);
 
          }
          else if (xhttp.readyState == 4 && xhttp.status != 204) {
@@ -26,13 +26,13 @@ function deletePerson(personID) {
  }
 
 
-function deleteRow(personID){
+function deleteRow(memberID){
 
-    let table = document.getElementById("people-table");
+    let table = document.getElementById("member-table");
     for (let i = 0, row; row = table.rows[i]; i++) {
        //iterate through rows
        //rows would be accessed using the "row" variable assigned in the for loop
-       if (table.rows[i].getAttribute("data-value") == personID) {
+       if (table.rows[i].getAttribute("data-value") == memberID) {
             table.deleteRow(i);
             break;
        }
