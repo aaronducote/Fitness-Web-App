@@ -77,10 +77,11 @@ addRowToTable = (data) => {
     // Create a row and 4 cells
     let row = document.createElement("TR");
     let idCell = document.createElement("TD");
-    let firstNameCell = document.createElement("TD");
-    let lastNameCell = document.createElement("TD");
-    let homeworldCell = document.createElement("TD");
-    let ageCell = document.createElement("TD");
+    let NameCell = document.createElement("TD");
+    let EmailCell = document.createElement("TD");
+    let HeightCell = document.createElement("TD");
+    let WeightCell = document.createElement("TD");
+    let AgeCell = document.createElement("TD");
 
     // Fill the cells with correct data
     idCell.innerText = newRow.id;
@@ -92,10 +93,11 @@ addRowToTable = (data) => {
 
     // Add the cells to the row 
     row.appendChild(idCell);
-    row.appendChild(firstNameCell);
-    row.appendChild(lastNameCell);
-    row.appendChild(homeworldCell);
-    row.appendChild(ageCell);
+    row.appendChild(NameCell);
+    row.appendChild(EmailCell);
+    row.appendChild(HeightCell);
+    row.appendChild(WeightCell);
+    row.appendChild(AgeCell);
     
     // Add the row to the table
     currentTable.appendChild(row);
